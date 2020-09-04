@@ -1,8 +1,7 @@
-# Hackintosh HP Probook 4540s
-
-This repo contains my configuration, kexts, etc of my working hackintosh MacOS Catalina 10.15
-
+# Opencore on HP PROBOOK 4540S 
+* Bootloader: [OpenCore 0.6.0](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.6.0)
 ![Alt text](http://blazinglist.com/wp-content/uploads/2016/03/HP-ProBook-450-G3.jpg)
+* Please note that although this EFI work for my laptop (almost) perfect, it may damage your hardward (especcially because I don't use the pre-built ACPI), if you try this with out configurating into your laptop, I DO NOT have responsible for this so this should be used for consulting ONLY. You have been warned.
 
 ## Specs
 
@@ -16,44 +15,22 @@ This repo contains my configuration, kexts, etc of my working hackintosh MacOS C
 
 **Wifi + BT:** BCM94352HMB
 
-## Installation
-
-***Notice: you have to generate your own SMBIOS/SerialNumber and SMBIOS/BoardSerialNumber.***
-
-You can either install your hackintosh all by yourself or you can use my EFI folders to install and run the hackintosh.
-
-To install hackintosh on your laptop, follow these 2 guides:
-
-- [[Guide] Booting the OS X installer on LAPTOPS with Clover](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/)
-- [[Guide] HP ProBook/EliteBook/Zbook using Clover UEFI hotpatch](https://www.tonymacx86.com/threads/guide-hp-probook-elitebook-zbook-using-clover-uefi-hotpatch.261719/)
-
-### Wifi + BT card
-
-WIFI ONLY: Atheros AR9280/9285, Broadcom 4322/43224 (better OS X feature support)
-WIFI+BT: AR5B195 (not recommended), Broadcom 43225HMB/4352HMB (better OS X feature support)
-
-### How to install kext wifi + Bluetooth for MacOS Catalina 10.15
-
-Since macOS Catalina, system partition is read-only, you have to mount it first as read-write:
-
-```bash
-sudo mount -uw /
-```
-
-Copy (`BrcmPatchRAM3.kext`, `BrcmFirmwareRepo.kext` and `BrcmBluetoothInjector.kext`) to `/Library/Extensions`.
-
-To rebuild kext cache:
-
-```bash
-sudo chown -v -R root:wheel /System/Library/Extensions
-sudo touch /System/Library/Extensions
-sudo chmod -v -R 755 /Library/Extensions
-sudo chown -v -R root:wheel /Library/Extensions
-sudo touch /Library/Extensions
-sudo kextcache -i /
-```
-
-## Credit
-@RehabMan for all patch DSTD
-@acidanthera for Audio , Wifi , Bluetooth
-
+# Thanks to:
+## **Developers of OpenCore**:
+* [al3xtjames](https://github.com/al3xtjames)
+* [Andrey1970AppleLife](https://github.com/Andrey1970AppleLife)
+* [Download-Fritz](https://github.com/Download-Fritz)
+* [Goldfish64](https://github.com/Goldfish64)
+* [nms42](https://github.com/nms42)
+* [PMHeart](https://github.com/PMHeart)
+* [savvamitrofanov](https://github.com/savvamitrofanov)
+* [vit9696](https://github.com/vit9696)  
+For their wonderful, powerful [OpenCore bootloader](https://github.com/acidanthera/OpenCorePkg)
+## **Guide Writer**
+* [CorpNewt](https://github.com/corpnewt)
+* [Midi](https://github.com/midi1996)
+* [DhinakG](https://github.com/dhinakg)
+* [Khronokernel](https://github.com/khronokernel)
+* [and the rest of the dortania team](https://github.com/dortania)  
+For their best, extremly easy to understand [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) which help me almost everything in setting my EFI
+![OpenCore Logo](https://dortania.github.io/docs/latest/Logos/Logo-.png)
