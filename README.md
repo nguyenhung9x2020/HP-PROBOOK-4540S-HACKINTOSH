@@ -1,6 +1,6 @@
 # Opencore on HP PROBOOK 4540S 
 * Bootloader: [OpenCore 0.6.0](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.6.0)
-![Alt text](http://blazinglist.com/wp-content/uploads/2016/03/HP-ProBook-450-G3.jpg)
+![Alt text](https://i.ytimg.com/vi/Qj9kxnqmSHs/maxresdefault.jpg)
 * Please note that although this EFI work for my laptop (almost) perfect, it may damage your hardward (especcially because I don't use the pre-built ACPI), if you try this with out configurating into your laptop, I DO NOT have responsible for this so this should be used for consulting ONLY. You have been warned.
 
 ## Specs
