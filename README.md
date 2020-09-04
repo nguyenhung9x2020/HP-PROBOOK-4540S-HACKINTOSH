@@ -15,6 +15,10 @@
 
 **Wifi + BT:** BCM94352HMB
 
+## What don't work?  
+* Audio
+* iService (need to call Apple)
+
 # Thanks to:
 ## **Developers of OpenCore**:
 * [al3xtjames](https://github.com/al3xtjames)
