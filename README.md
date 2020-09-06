@@ -3,8 +3,11 @@
 ![Alt text](https://dortania.github.io/docs/latest/Logos/Logo-.png)
 * Please note that although this EFI work for my laptop (almost) perfect, it may damage your hardward (especcially because I don't use the pre-built ACPI), if you try this with out configurating into your laptop, I DO NOT have responsible for this so this should be used for consulting ONLY. You have been warned.
 
-#### Latest Update 05 September 2020
-- Fix Audio
+#### Latest Update 06 September 2020
+- Disable get log.txt
+- Add plugin kext fakesmc for hwmonitor
+- Add GUI theme
+- Add driver hpfanreset
 
 ## Specs
 
