@@ -43,3 +43,6 @@ For their wonderful, powerful [OpenCore bootloader](https://github.com/acidanthe
 * [Khronokernel](https://github.com/khronokernel)
 * [and the rest of the dortania team](https://github.com/dortania)  
 For their best, extremly easy to understand [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) which help me almost everything in setting my EFI
+
+## Credits
+@RehabMan for his guide hot patch guide clover
