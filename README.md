@@ -10,18 +10,21 @@
 ![4](./screenshoot/4.png)
 ![5](./screenshoot/5.png)
 
-## Specs
-
-**BIOS:** F.68 Rev.A
-
-**CPU:** Intel Core i5 3210M @ 2.5 GHz (Ivy Bridge, 2 cores, 4 HT)
-
-**GPU:** integrated Intel HD Graphics 4000
-
-**Display:** 1366x768
-
-**Wifi + BT:** BCM94352HMB
-
+# Specs
+```
+Model              HP Probook 4540s
+Mainboard          Mobile Intel HM76 chipset
+CPU                Intel® Core i5 processors, Dual Core (3-MB L3 cache, 35W)
+Memory             8GB DDR4 1333MHz (4G+4G)
+Graphics           Intel HD Graphics 4000
+Audio              IDT 92HD87
+Ethernet           Realtek RTL8151FH-CG 10/100/1000
+Wi-Fi              Broadcom BCM94352HMB
+Monitor            HD 1366x768
+BIOS Verison       F.68 Rev.A
+macOS Verison      11.0 BigSur
+OpenCore Version   0.6.1
+```
 ## What don't work?  
 * iService (need to call Apple)
 
