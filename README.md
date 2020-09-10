@@ -25,6 +25,17 @@ BIOS Verison       F.68 Rev.A
 macOS Verison      11.0 BigSur
 OpenCore Version   0.6.1
 ```
+## What working?  
+* Battery Indicator
+* Internal Speaker + Headphone + HDMI + HDMI Sounds
+* Ethernet + WiFi + Bluetooth
+* USB
+* Trackpad
+* Brightness, FN Brightness
+* Sleep + Wake + Shutdown + Restart
+* Cpu Power Management
+* IGPU / QE/CI working good
+
 ## What don't work?  
 * iService (need to call Apple)
 
