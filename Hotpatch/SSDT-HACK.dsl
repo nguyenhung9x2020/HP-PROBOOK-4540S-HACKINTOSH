@@ -108,17 +108,30 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0x00000000)
 
     Method (XOSI, 1, NotSerialized)
     {
-        Store (Package (0x07)
+        Local0 = Package (0x11)
             {
-                "Windows", 
                 "Windows 2001", 
+                "Windows 2001.1", 
+                "Windows 2001 SP1", 
                 "Windows 2001 SP2", 
+                "Windows 2001 SP3", 
                 "Windows 2006", 
                 "Windows 2006 SP1", 
-                "Windows 2006.1", 
-                "Windows 2009"
-            }, Local0)
-        Return (LNotEqual (Ones, Match (Local0, MEQ, Arg0, MTR, Zero, Zero)))
+                "Windows 2009", 
+                "Windows 2012", 
+                "Windows 2013", 
+                "Microsoft Windows NT", 
+                "Microsoft Windows", 
+                "Microsoft WindowsME: Millennium Edition"
+            }
+        If (_OSI ("Darwin"))
+        {
+            Return ((Ones != Match (Local0, MEQ, Arg0, MTR, Zero, Zero)))
+        }
+        Else
+        {
+            Return (_OSI (Arg0))
+        }
     }
 
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
@@ -181,33 +194,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0x00000000)
             If (LAnd (LAnd (LEqual (0x03, Arg0), LEqual (One, Arg1)), And (\RMCF.DGPU, One)))
             {
                 \RMCF.RDSS (Zero)
-            }
-        }
-    }
-
-    Device (_SB.PCI0.SBUS.BUS0)
-    {
-        Name (_CID, "smbus")  // _CID: Compatible ID
-        Name (_ADR, Zero)  // _ADR: Address
-        Device (DVL0)
-        {
-            Name (_ADR, 0x57)  // _ADR: Address
-            Name (_CID, "diagsvault")  // _CID: Compatible ID
-            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-            {
-                If (LNot (Arg2))
-                {
-                    Return (Buffer (One)
-                    {
-                         0x03                                           
-                    })
-                }
-
-                Return (Package (0x02)
-                {
-                    "address", 
-                    0x57
-                })
             }
         }
     }
