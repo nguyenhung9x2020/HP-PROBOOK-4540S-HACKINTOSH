@@ -1,9 +1,13 @@
-# Mac OS X 10.15.X FOR HP PROBOOK 4540S
+# Mac OS X 11.2.X FOR HP PROBOOK 4540S
+<img align="right" src="https://www.notebookcheck.net/fileadmin/_processed_/csm_4540s_Teaser_05_aee6d04108.jpg" alt="Critter" width="300">
 
-<img align="right" src="https://dortania.github.io/docs/latest/Logos/Logo-.png" alt="Critter" width="200">
-
-* Bootloader: [OpenCore 0.6.1](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.6.1)
+* Bootloader: [OpenCore 0.6.7](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.6.7)
 * Please note that although this EFI work for my laptop (almost) perfect, it may damage your hardward (especcially because I don't use the pre-built ACPI), if you try this with out configurating into your laptop, I DO NOT have responsible for this so this should be used for consulting ONLY. You have been warned.
+
+## Status - Stable
+
+## Releases (Until 2021/3/04)
+- The latest version: v1.0
 
 # Screenshoot
 ![1](./screenshoot/1.png)
@@ -24,21 +28,25 @@ Wi-Fi              Broadcom BCM94352HMB
 Monitor            HD 1366x768
 BIOS Verison       F.68 Rev.A
 macOS Verison      11.0 BigSur
-OpenCore Version   0.6.1
+OpenCore Version   0.6.7
 ```
-## What working?  
-* Battery Indicator
-* Internal Speaker + Headphone + HDMI + HDMI Sounds
-* Ethernet + WiFi + Bluetooth
-* USB
-* Trackpad
-* Brightness, FN Brightness
-* Sleep + Wake + Shutdown + Restart
-* Cpu Power Management
-* IGPU / QE/CI working good
+## Full Compatibility
+- AppleHDA native audio, Speakers + Internal Mic + Headphone
+- Native power management
+- Battery Status (Percentage can be displayed)
+- Brightness control 
+- Wifi
+- Bluetooth
+- Ethernet port
+- Mac App Store works normally
+- FN Brightness keyboard . audio ...
+- AirDrop
 
 ## What don't work?  
-* iService (need to call Apple)
+- iService (need to call Apple)
+
+## What don't test?
+-  Built in Camera (Camera on device broken , i don't test it)
 
 # Thanks to:
 ## **Developers of OpenCore**:
@@ -61,4 +69,3 @@ For their best, extremly easy to understand [OpenCore Install Guide](https://dor
 
 ## Credits
 @RehabMan for all add in patch hp probook 4530s/4540s
-@chriss111 for theme
