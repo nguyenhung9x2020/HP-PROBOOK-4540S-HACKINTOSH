@@ -5,7 +5,7 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLsYMM3S.aml, Thu Mar  4 15:10:55 2021
+ * Disassembly of iASLmva5da.aml, Thu Mar  4 18:26:09 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,19 +20,19 @@
  */
 DefinitionBlock ("", "SSDT", 2, "DRTNIA", "PNLF", 0x00000000)
 {
-    External (_SB_.PCI0.GFX0, DeviceObj)
+    External (_SB_.PCI0.IGPU, DeviceObj)
     External (RMCF.BKLT, IntObj)
     External (RMCF.FBTP, IntObj)
     External (RMCF.GRAN, IntObj)
     External (RMCF.LEVW, IntObj)
     External (RMCF.LMAX, IntObj)
 
-    Scope (_SB.PCI0.GFX0)
+    Scope (_SB.PCI0.IGPU)
     {
         OperationRegion (RMP3, PCI_Config, Zero, 0x14)
     }
 
-    Device (_SB.PCI0.GFX0.PNLF)
+    Device (_SB.PCI0.IGPU.PNLF)
     {
         Name (_ADR, Zero)  // _ADR: Address
         Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
@@ -107,7 +107,7 @@ DefinitionBlock ("", "SSDT", 2, "DRTNIA", "PNLF", 0x00000000)
                 Return (Zero)
             }
 
-            Local0 = ^GDID /* \_SB_.PCI0.GFX0.PNLF.GDID */
+            Local0 = ^GDID /* \_SB_.PCI0.IGPU.PNLF.GDID */
             Local2 = Ones
             If (CondRefOf (\RMCF.LMAX))
             {
@@ -181,7 +181,7 @@ DefinitionBlock ("", "SSDT", 2, "DRTNIA", "PNLF", 0x00000000)
                 }
 
                 INI1 (Local4)
-                Local1 = ^LEVX /* \_SB_.PCI0.GFX0.PNLF.LEVX */
+                Local1 = ^LEVX /* \_SB_.PCI0.IGPU.PNLF.LEVX */
                 If (!Local1)
                 {
                     Local1 = Local2
