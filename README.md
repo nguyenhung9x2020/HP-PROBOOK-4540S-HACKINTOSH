@@ -9,12 +9,6 @@
 ## Releases (Until 2021/3/04)
 - The latest version: v1.0
 
-# Screenshoot
-![1](./screenshoot/1.png)
-![2](./screenshoot/2.png)
-![3](./screenshoot/3.png)
-![4](./screenshoot/4.png)
-
 # Specs
 ```
 Model              HP Probook 4540s
@@ -41,9 +35,12 @@ OpenCore Version   0.6.7
 - Mac App Store works normally
 - FN Brightness keyboard . audio ...
 - AirDrop
+- Sleep
+- HDMI, HDMI sound
 
 ## What don't work?  
 - iService (need to call Apple)
+- Wake with usb or keyboard not work (I will fix later)
 
 ## What don't test?
 -  Built in Camera (Camera on device broken , i don't test it)
@@ -69,3 +66,9 @@ For their best, extremly easy to understand [OpenCore Install Guide](https://dor
 
 ## Credits
 @RehabMan for all add in patch hp probook 4530s/4540s
+
+# Screenshoot
+![1](./screenshoot/1.png)
+![2](./screenshoot/2.png)
+![3](./screenshoot/3.png)
+![4](./screenshoot/4.png)
