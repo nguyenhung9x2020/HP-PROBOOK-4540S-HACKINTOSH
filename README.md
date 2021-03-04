@@ -8,6 +8,7 @@
 
 ## Releases (Until 2021/3/04)
 - The latest version: v1.0
+- [Download Here](https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/releases/download/V1.0/EFI.zip)
 
 # Specs
 ```
