@@ -67,8 +67,12 @@ For their best, extremly easy to understand [OpenCore Install Guide](https://dor
 ## Credits
 @RehabMan for all add in patch hp probook 4530s/4540s
 
-# Screenshoot
-![1](./screenshoot/1.png)
-![2](./screenshoot/2.png)
-![3](./screenshoot/3.png)
-![4](./screenshoot/4.png)
+## Screenshoot
+### System Info
+![1](./screenshoot/Screen Shot 2021-03-04 at 15.50.10.png)
+### Audio
+![2](./screenshoot/Screen Shot 2021-03-04 at 15.53.47.png)
+### Displays
+![3](./screenshoot/Screen Shot 2021-03-04 at 15.56.24.png)
+### Graphics
+![4](./screenshoot/Screen Shot 2021-03-04 at 15.55.24.png)
