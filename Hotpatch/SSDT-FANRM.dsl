@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
- * Disassembling to non-symbolic legacy ASL operators
+ * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLr8MDwd.aml, Mon Sep 14 19:21:07 2020
+ * Disassembly of iASL1UsOdW.aml, Thu Mar  4 15:09:08 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,16 +20,16 @@
  */
 DefinitionBlock ("", "SSDT", 2, "hack", "_FANRM", 0x00000000)
 {
-    External (_SB_.PCI0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.CRZN, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.DTMP, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.ECMX, MutexObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.ECRG, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.FRDC, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.FTGC, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC__.TEMP, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.LPCB, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC__, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC__.CRZN, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC__.DTMP, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC__.ECMX, MutexObj)
+    External (_SB_.PCI0.LPCB.EC__.ECRG, IntObj)
+    External (_SB_.PCI0.LPCB.EC__.FRDC, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC__.FTGC, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC__.TEMP, FieldUnitObj)
 
     Device (SMCD)
     {
@@ -48,18 +48,18 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_FANRM", 0x00000000)
         })
         Method (FAN0, 0, Serialized)
         {
-            If (LNot (\_SB.PCI0.LPCB.EC.ECRG))
+            If (!\_SB.PCI0.LPCB.EC.ECRG)
             {
                 Return (Zero)
             }
 
-            Store (\_SB.PCI0.LPCB.EC.FRDC, Local0)
+            Local0 = \_SB.PCI0.LPCB.EC.FRDC /* External reference */
             If (Local0)
             {
-                Divide (Add (0x0003C000, ShiftRight (Local0, One)), Local0, , Local0)
+                Local0 = ((0x0003C000 + (Local0 >> One)) / Local0)
             }
 
-            If (LEqual (0x03C4, Local0))
+            If ((0x03C4 == Local0))
             {
                 Return (Zero)
             }
@@ -69,28 +69,28 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_FANRM", 0x00000000)
 
         Method (TCPU, 0, Serialized)
         {
-            If (LNot (\_SB.PCI0.LPCB.EC.ECRG))
+            If (!\_SB.PCI0.LPCB.EC.ECRG)
             {
                 Return (Zero)
             }
 
             Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
-            Store (One, \_SB.PCI0.LPCB.EC.CRZN)
-            Store (\_SB.PCI0.LPCB.EC.DTMP, Local0)
+            \_SB.PCI0.LPCB.EC.CRZN = One
+            Local0 = \_SB.PCI0.LPCB.EC.DTMP /* External reference */
             Release (\_SB.PCI0.LPCB.EC.ECMX)
             Return (Local0)
         }
 
         Method (TAMB, 0, Serialized)
         {
-            If (LNot (\_SB.PCI0.LPCB.EC.ECRG))
+            If (!\_SB.PCI0.LPCB.EC.ECRG)
             {
                 Return (Zero)
             }
 
             Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
-            Store (0x04, \_SB.PCI0.LPCB.EC.CRZN)
-            Store (\_SB.PCI0.LPCB.EC.TEMP, Local0)
+            \_SB.PCI0.LPCB.EC.CRZN = 0x04
+            Local0 = \_SB.PCI0.LPCB.EC.TEMP /* External reference */
             Release (\_SB.PCI0.LPCB.EC.ECMX)
             Return (Local0)
         }
@@ -147,8 +147,8 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_FANRM", 0x00000000)
         Name (FCTD, 0x28)
         Name (FHST, Buffer (0x10)
         {
-            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
         })
         Name (FIDX, Zero)
         Name (FNUM, Zero)
@@ -157,68 +157,68 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_FANRM", 0x00000000)
         Name (FCNT, Zero)
         Method (FCPU, 0, NotSerialized)
         {
-            If (LNot (\_SB.PCI0.LPCB.EC.ECRG))
+            If (!\_SB.PCI0.LPCB.EC.ECRG)
             {
                 Return (Zero)
             }
 
             Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
-            Store (One, \_SB.PCI0.LPCB.EC.CRZN)
-            Store (0x1F, \_SB.PCI0.LPCB.EC.TEMP)
-            Store (One, \_SB.PCI0.LPCB.EC.CRZN)
-            Store (\_SB.PCI0.LPCB.EC.DTMP, Local0)
+            \_SB.PCI0.LPCB.EC.CRZN = One
+            \_SB.PCI0.LPCB.EC.TEMP = 0x1F
+            \_SB.PCI0.LPCB.EC.CRZN = One
+            Local0 = \_SB.PCI0.LPCB.EC.DTMP /* External reference */
             Release (\_SB.PCI0.LPCB.EC.ECMX)
-            Add (Local0, FSUM, Local1)
-            Store (FIDX, Local2)
-            Subtract (Local1, DerefOf (Index (FHST, Local2)), Local1)
-            Store (Local0, Index (FHST, Local2))
-            Store (Local1, FSUM)
-            Increment (Local2)
-            If (LGreaterEqual (Local2, SizeOf (FHST)))
+            Local1 = (Local0 + FSUM) /* \SMCD.FSUM */
+            Local2 = FIDX /* \SMCD.FIDX */
+            Local1 -= DerefOf (FHST [Local2])
+            FHST [Local2] = Local0
+            FSUM = Local1
+            Local2++
+            If ((Local2 >= SizeOf (FHST)))
             {
-                Store (Zero, Local2)
+                Local2 = Zero
             }
 
-            Store (Local2, FIDX)
-            Store (FNUM, Local2)
-            If (LNotEqual (Local2, SizeOf (FHST)))
+            FIDX = Local2
+            Local2 = FNUM /* \SMCD.FNUM */
+            If ((Local2 != SizeOf (FHST)))
             {
-                Increment (Local2)
-                Store (Local2, FNUM)
+                Local2++
+                FNUM = Local2
             }
 
-            Divide (Local1, Local2, , Local0)
-            If (LGreater (Local0, 0xFF))
+            Local0 = (Local1 / Local2)
+            If ((Local0 > 0xFF))
             {
-                Store (0xFF, Local0)
+                Local0 = 0xFF
             }
 
-            Store (Match (FTA1, MGE, Local0, MTR, Zero, Zero), Local2)
-            If (LGreater (Local2, FLST))
+            Local2 = Match (FTA1, MGE, Local0, MTR, Zero, Zero)
+            If ((Local2 > FLST))
             {
-                Subtract (Local2, FLST, Local1)
-                Store (FCTU, Local4)
+                Local1 = (Local2 - FLST) /* \SMCD.FLST */
+                Local4 = FCTU /* \SMCD.FCTU */
             }
             Else
             {
-                Subtract (FLST, Local2, Local1)
-                Store (FCTD, Local4)
+                Local1 = (FLST - Local2)
+                Local4 = FCTD /* \SMCD.FCTD */
             }
 
-            If (LNot (Local1))
+            If (!Local1)
             {
-                Store (Zero, FCNT)
+                FCNT = Zero
             }
             Else
             {
-                Store (FCNT, Local3)
-                Increment (FCNT)
-                Divide (Local4, Local1, , Local1)
-                If (LGreaterEqual (Local3, Local1))
+                Local3 = FCNT /* \SMCD.FCNT */
+                FCNT++
+                Local1 = (Local4 / Local1)
+                If ((Local3 >= Local1))
                 {
-                    Store (Local2, FLST)
-                    Store (DerefOf (Index (FTA2, Local2)), \_SB.PCI0.LPCB.EC.FTGC)
-                    Store (Zero, FCNT)
+                    FLST = Local2
+                    \_SB.PCI0.LPCB.EC.FTGC = DerefOf (FTA2 [Local2])
+                    FCNT = Zero
                 }
             }
 

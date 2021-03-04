@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
- * Disassembling to non-symbolic legacy ASL operators
+ * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLSUrrXN.aml, Mon Sep 14 19:26:16 2020
+ * Disassembly of iASLk0KNt0.aml, Thu Mar  4 15:11:56 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,7 +20,7 @@
  */
 DefinitionBlock ("", "SSDT", 2, "hack", "PS2", 0x00000000)
 {
-    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
 
     Scope (\_SB.PCI0.LPCB.PS2K)
     {
