@@ -69,10 +69,10 @@ For their best, extremly easy to understand [OpenCore Install Guide](https://dor
 
 ## Screenshoot
 ### System Info
-![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/Screen%20Shot%202021-03-04%20at%2015.50.10.png)
+![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/info.png)
 ### Audio
-![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/Screen%20Shot%202021-03-04%20at%2015.53.47.png)
+![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/audio.png)
 ### Displays
-![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/Screen%20Shot%202021-03-04%20at%2015.56.24.png)
+![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/displays.png)
 ### Wifi Network
-![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/Screen%20Shot%202021-03-04%20at%2015.52.17.png)
+![image] (https://github.com/nguyenhung9x2020/HP-PROBOOK-4540S-HACKINTOSH/blob/11.2.2/screenshoot/wifi.png)
