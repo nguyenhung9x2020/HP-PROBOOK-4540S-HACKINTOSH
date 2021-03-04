@@ -69,10 +69,10 @@ For their best, extremly easy to understand [OpenCore Install Guide](https://dor
 
 ## Screenshoot
 ### System Info
-![1](./screenshoot/Screen Shot 2021-03-04 at 15.50.10.png)
+![image] (./screenshoot/Screen Shot 2021-03-04 at 15.50.10.png)
 ### Audio
-![2](./screenshoot/Screen Shot 2021-03-04 at 15.53.47.png)
+![image] (./screenshoot/Screen Shot 2021-03-04 at 15.53.47.png)
 ### Displays
-![3](./screenshoot/Screen Shot 2021-03-04 at 15.56.24.png)
+![image] (./screenshoot/Screen Shot 2021-03-04 at 15.56.24.png)
 ### Graphics
-![4](./screenshoot/Screen Shot 2021-03-04 at 15.55.24.png)
+![image] (./screenshoot/Screen Shot 2021-03-04 at 15.55.24.png)
